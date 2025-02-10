@@ -1,0 +1,16 @@
+FROM golang:1.17-alpine as builder
+WORKDIR /app
+ARG VERSION
+ENV GOPROXY=https://goproxy.cn
+COPY ../go.mod ./
+COPY ../go.sum ./
+COPY .. .
+RUN CGO_ENABLED=0 go build -ldflags "-s -w -X 'main.version=${VERSION}'" -o rainbow cmd/agent.go
+
+FROM busybox as runner
+LABEL MAINTAINER="PIXIU"
+
+COPY --from=builder /app/rainbow /app
+COPY docker/start.sh /usr/local/bin/start
+
+CMD ["start"]

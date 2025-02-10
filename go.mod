@@ -6,9 +6,11 @@ require (
 	github.com/caoyingjunz/pixiulib v1.0.1-0.20250202143815-b9478878b1b2
 	github.com/docker/docker v23.0.3+incompatible
 	github.com/gin-gonic/gin v1.8.1
+	gopkg.in/yaml.v3 v3.0.1
 	gorm.io/driver/mysql v1.4.1
 	gorm.io/gorm v1.23.8
-	k8s.io/apimachinery v0.24.8
+	k8s.io/apimachinery v0.23.5
+	k8s.io/client-go v0.23.5
 	k8s.io/klog/v2 v2.90.1
 )
 
@@ -48,8 +50,6 @@ require (
 	golang.org/x/time v0.9.0 // indirect
 	google.golang.org/protobuf v1.28.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
-	gopkg.in/yaml.v3 v3.0.1 // indirect
 	gotest.tools/v3 v3.5.1 // indirect
-	k8s.io/client-go v0.24.8 // indirect
 	k8s.io/utils v0.0.0-20220210201930-3a6ce19ff2f9 // indirect
 )
